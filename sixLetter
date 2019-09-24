@@ -1,0 +1,33 @@
+import java.util.*;
+import java.io.*;
+import java.nio.*;
+import java.nio.file.*;
+
+
+public class anagramCreator {
+	public static void main(String[] args) {
+		File file = new File("wordlist.txt");
+	    try { 
+	        Scanner sc = new Scanner(file);
+	        while (sc.hasNextLine()) {
+	            int i = sc.nextInt();
+	            System.out.println(i);
+	        }
+	        sc.close();
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    }
+		
+		String letters = "abcdefghijklmnopqrstuvwxyz";
+		char[] alphabet = letters.toCharArray();
+		
+		String finalWord = "";
+		for (int i = 0; i < 6; i++) {
+			 char firstLetter = alphabet[(int) (Math.random() * 26)];
+			 finalWord = finalWord + firstLetter;
+		}
+		System.out.print(finalWord);
+		
+		
+	}	
+}
